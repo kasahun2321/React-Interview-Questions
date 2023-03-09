@@ -1511,3 +1511,136 @@ const Dropdown = () => {
 ```
 
 </details>
+
+<details>
+<summary>
+    <h3>62. how to pass data from child to parent component in react.</h3>
+</summary>
+
+To pass data from a child component to a parent component in a React application, you can use a technique called "lifting state up". This involves passing a function from the parent component to the child component as a prop, and using that function to update the parent's state with the child's data.
+
+```jsx
+//hook
+
+// ParentComponent.js
+
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const [data, setData] = useState('');
+
+  function handleData(dataFromChild) {
+    setData(dataFromChild);
+  }
+
+  return (
+    <div>
+      <ChildComponent onData={handleData} />
+      <p>Data from child: {data}</p>
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+// ChildComponent.js
+
+import React, { useState } from 'react';
+
+function ChildComponent({ onData }) {
+  const [data, setData] = useState('');
+
+  function handleChange(event) {
+    setData(event.target.value);
+    onData(event.target.value);
+  }
+
+  return (
+    <div>
+      <input type="text" value={data} onChange={handleChange} />
+    </div>
+  );
+}
+
+export default ChildComponent;
+
+```
+
+</details>
+
+<details>
+<summary>
+    <h3>place where header question.</h3>
+</summary>
+
+pleace where write desctition
+
+```jsx 
+//beggining of jsx
+pleace where write js code
+
+//end of jsx
+```
+</details>
+
+<details>
+<summary>
+    <h3>63 what is prop drilling in react?.</h3>
+</summary>
+Prop drilling is a term used in React to describe the process of passing props from a parent component down to its child components, and potentially further down the component tree, until the props reach the component where they are needed. This can result in a lot of unnecessary props being passed down the tree, which can make the code harder to read and maintain.
+
+<h4>To avoid prop drilling, you can use other techniques such as context or Redux to manage state and share data between components without having to pass props down through the component tree.
+Code Example<h4>
+
+```jsx 
+//beggining of jsx
+// ParentComponent.js
+
+import React from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const data = 'Hello, world!';
+
+  return (
+    <div>
+      <ChildComponent data={data} />
+    </div>
+  );
+}
+
+export default ParentComponent;
+
+// ChildComponent.js
+
+import React from 'react';
+import GrandchildComponent from './GrandchildComponent';
+
+function ChildComponent({ data }) {
+  return (
+    <div>
+      <GrandchildComponent data={data} />
+    </div>
+  );
+}
+
+export default ChildComponent;
+
+// GrandchildComponent.js
+
+import React from 'react';
+
+function GrandchildComponent({ data }) {
+  return (
+    <div>
+      <p>{data}</p>
+    </div>
+  );
+}
+
+export default GrandchildComponent;
+
+//end of jsx
+```
+</details>
