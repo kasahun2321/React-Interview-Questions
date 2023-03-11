@@ -32,8 +32,49 @@ for (let i = 0; i < characters.length; i++) {
     if (result[temp] === undefined) {
         result[temp] = 1;
     } else {
-        result[temp] +1;
+        result[temp] + 1;
     }
 }
 
-console.log(result); 
+console.log(result);
+
+let cars = [
+    {
+        model: "Kia",
+        name: "forte"
+    },
+    {
+        model: "toyota",
+        name: "yaris"
+    },
+    {
+        model: "Kia",
+        name: "SAUL"
+    },
+    {
+        model: "bmw",
+        name: "x3"
+    },
+    {
+        model: "honda",
+        name: "civic"
+    },
+    {
+        model: "Kia",
+        name: "REO"
+    }
+];
+//expected output 
+//{kia:["forte","RIo","SAUl"],toyota:["yaris"],honda:["civic"]}
+
+let newresult = {}
+cars.map(elem => {
+    let temp = elem.model
+    if (newresult[temp] == undefined) {
+        newresult[temp] = []
+        newresult[temp].push(elem.name)
+    }
+    newresult[temp].push(elem.name)
+    return;
+})
+
