@@ -1641,6 +1641,38 @@ function GrandchildComponent({ data }) {
 
 export default GrandchildComponent;
 
+<details>
+<summary>
+    <h3> how to copy object by value and by reference , how to loop over object</h3>
+</summary>
+
+ans
+</details>
+<details>
+<summary>
+    <h3>how to increase perfoemance in react , what is react context, react suspend, how redux works,what is react error boundry component?</h3>
+</summary>
+ans
+
+</details>
+
+<details>
+<summary>
+    <h3>lazy loading , react router</h3>
+</summary>
+
+......
+
+</details>
+
+<details>
+<summary>
+    <h3>what is event loop how it works, what debaounce and throtling, what is worker thread</h3>
+</summary>
+
+React creates a virtual DOM. When the state changes in a component it first runs a "diffing" algorithm, which identifies what has changed in the virtual DOM. The second step is reconciliation, where it updates the DOM with the results of diff.
+
+</details>  
 //end of jsx
 ```
 </details>
