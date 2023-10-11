@@ -1676,3 +1676,35 @@ React creates a virtual DOM. When the state changes in a component it first runs
 //end of jsx
 ```
 </details>
+
+
+```jsx 
+//beggining of jsx
+function SnakeCase(str) { 
+  return str
+    .replace(/\s+/g, '_')                        // Replace spaces with underscores
+    .replace(/[%*]/g, '')                        // Remove '%' and '*' characters
+    .replace(/([a-z])([A-Z])/g, '$1_$2')        // Insert underscores between lowercase and uppercase letters
+    .toLowerCase();                             // Convert to lowercase
+}
+   
+// Example usage:
+//converty coming string into snake case
+const inputString = "this Is-camel*Case";
+const snakeCaseString = SnakeCase(inputString);
+console.log(snakeCaseString); // Output: "this_is_camel_case"
+
+
+function PowersofTwo(num) { 
+  if (num <= 0) {
+    return false;  // Handle non-positive numbers.
+  }
+
+  return (Math.ceil(Math.log2(num)) === Math.floor(Math.log2(num));
+}
+
+// Call the function with a number
+console.log(PowersofTwo(16)); // Output: true (16 is 2^4)
+
+
+```
